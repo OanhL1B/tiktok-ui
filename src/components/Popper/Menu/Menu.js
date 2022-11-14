@@ -10,7 +10,7 @@ import { useState } from 'react';
 
 const cx = classNames.bind(styles);
 
-const defaultFn = () => {};
+const defaultFn = () => {}; // giả sử k truyền dữ liệu cũng không bị lỗi
 
 function Menu({ children, items = [], hideOnClick = false, onChange = defaultFn }) {
     const [history, setHistory] = useState([{ data: items }]);
@@ -18,6 +18,7 @@ function Menu({ children, items = [], hideOnClick = false, onChange = defaultFn 
 
     const renderItems = () => {
         return current.data.map((item, index) => {
+            // item nào cho childen thì item đó là parent
             const isParent = !!item.children;
 
             return (

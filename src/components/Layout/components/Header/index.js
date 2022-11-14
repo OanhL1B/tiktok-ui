@@ -19,11 +19,29 @@ import { Wrapper as PopperWrapper } from '~/components/Popper';
 import AccountItem from '~/components/AccountItem';
 import Menu from '~/components/Popper/Menu';
 import { faKeyboard } from '@fortawesome/free-regular-svg-icons';
+import MenuItem from '../../../Popper/Menu/MenuItem';
 
+// xây dựng menu nhiều cấp
 const MENU_ITEMS = [
     {
         icon: <FontAwesomeIcon icon={faEarthAsia} />,
         title: 'English',
+        // bước làm menu cấp 2
+        children: {
+            title: 'Language',
+            data: [
+                {
+                    title: 'Language',
+                    code: 'en',
+                    title: 'English',
+                },
+                {
+                    title: 'Language',
+                    code: 'vi',
+                    title: 'Tiếng Việt',
+                },
+            ],
+        },
     },
     {
         icon: <FontAwesomeIcon icon={faCircleQuestion} />,
@@ -39,6 +57,20 @@ const cx = classNames.bind(styles);
 
 function Header() {
     const [searchResult, setSearchResult] = useState([]);
+    useEffect(() => {
+        setTimeout(() => {
+            setSearchResult([]);
+        }, 0);
+    }, []);
+    //Handle logic
+    const handleMenuChange = (menuItem) => {
+        switch (menuItem.type) {
+            case 'language':
+                //handle change language
+                break;
+            default:
+        }
+    };
 
     return (
         <header className={cx('wrapper')}>
