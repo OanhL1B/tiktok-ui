@@ -25,6 +25,7 @@ import AccountItem from '~/components/AccountItem';
 import Menu from '~/components/Popper/Menu';
 import { faKeyboard } from '@fortawesome/free-regular-svg-icons';
 import Image from '~/components/Image';
+import { InboxIcon, MessageIcon } from '../../../Icons';
 
 // xây dựng menu nhiều cấp
 const MENU_ITEMS = [
@@ -140,19 +141,22 @@ function Header() {
                 <div className={cx('actions')}>
                     {currentUser ? (
                         <>
-                            <Tippy delay={[0, 50]} content="Upload video" placement="bottom">
-                                <button className={cx('action-btn')}>{/* <UploadIcon /> */}</button>
-                            </Tippy>
+                            {/* <Tippy delay={[0, 50]} content="Upload video" placement="bottom">
+                                <button className={cx('action-btn')}>
+                                    <UploadIcon />
+                                </button>
+                            </Tippy> */}
                             <Tippy delay={[0, 50]} content="Message" placement="bottom">
-                                <button className={cx('action-btn')}>{/* <MessageIcon /> */}</button>
+                                <button className={cx('action-btn')}>
+                                    <MessageIcon />
+                                </button>
                             </Tippy>
-                            {/*                             
                             <Tippy delay={[0, 50]} content="Inbox" placement="bottom">
                                 <button className={cx('action-btn')}>
-                                    {/* <InboxIcon /> */}
-                            {/* <span className={cx('badge')}>12</span> */}
-                            {/* </>/</button> */}
-                            {/* </div> </Tippy> */}
+                                    <InboxIcon />
+                                    <span className={cx('badge')}>12</span>
+                                </button>
+                            </Tippy>
                         </>
                     ) : (
                         <>
@@ -167,6 +171,7 @@ function Header() {
                                 className={cx('user-avatar')}
                                 src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/7165804365322649605~c5_100x100.jpeg?x-expires=1668657600&x-signature=KFilMpAaeB7KCjiWl6Lf9uMLvR4%3D"
                                 alt="Nguyen Van A"
+                                // fallback="https://fullstack.edu.vn/static/media/f8-icon.18cd71cfcfa33566a22b.png"
                             />
                         ) : (
                             <button className={cx('more-btn')}>

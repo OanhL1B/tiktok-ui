@@ -5,6 +5,7 @@ import images from '~/assets/images';
 import styles from './Image.module.scss';
 
 const Image = forwardRef(({ src, alt, className, fallback: customFallback = images.noImage, ...props }, ref) => {
+    // có ảnh thì hiện thị ảnh, không có ảnh thì hiện thị ảnh mặc định
     const [fallback, setFallback] = useState('');
 
     const handleError = () => {
