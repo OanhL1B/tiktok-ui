@@ -1,5 +1,5 @@
 import * as httpRequest from '~/utils/httpRequest';
-
+// tất cả phần gọi api sẽ nằm ở đây
 export const search = async (q, type = 'less') => {
     try {
         const res = await httpRequest.get('users/search', {

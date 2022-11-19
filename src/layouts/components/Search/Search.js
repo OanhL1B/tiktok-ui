@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef } from 'react';
+
 import { faCircleXmark, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import HeadlessTippy from '@tippyjs/react/headless';
@@ -22,7 +23,7 @@ function Search() {
     const debouncedValue = useDebounce(searchValue, 500);
 
     const inputRef = useRef();
-
+    // mỗi khi người dùng gõ tìm kiếm thì sẽ lọt vào trong này
     useEffect(() => {
         if (!debouncedValue.trim()) {
             setSearchResult([]);
@@ -40,6 +41,32 @@ function Search() {
 
         fetchApi();
     }, [debouncedValue]);
+
+    // useEffect(() => {
+    //     if (!debouncedValue.trim()) {
+    //         // searchResult([]);
+    //         return;
+    //     }
+
+    //     setLoading(true);
+    //     //encodeURIComponent trường hợp người dùng nhập ? & k gây trùng với url quy ước, gây ra bug
+    //     httpRequest
+    //         .get('users/search', {
+    //             params: {
+    //                 q: debouncedValue,
+    //                 type: 'less',
+    //             },
+    //         })
+
+    //         .then((res) => {
+    //             setSearchResult(res.data);
+    //             setLoading(false);
+    //         })
+
+    //         .catch(() => {
+    //             setLoading(false);
+    //         });
+    // }, [debouncedValue]);
 
     const handleClear = () => {
         setSearchValue('');
@@ -75,6 +102,7 @@ function Search() {
                         </PopperWrapper>
                     </div>
                 )}
+                //handle bấm ra ngoài khu vực của tippy
                 onClickOutside={handleHideResult}
             >
                 <div className={cx('search')}>
@@ -91,6 +119,7 @@ function Search() {
                             <FontAwesomeIcon icon={faCircleXmark} />
                         </button>
                     )}
+
                     {loading && <FontAwesomeIcon className={cx('loading')} icon={faSpinner} />}
 
                     <button className={cx('search-btn')} onMouseDown={(e) => e.preventDefault()}>
