@@ -97,6 +97,7 @@ function Header() {
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
+                {/* theo thói quen người dùng bấm vào logo link về trang chủ  */}
                 <Link to={config.routes.home} className={cx('logo-link')}>
                     <img src={images.logo} alt="Tiktok" />
                 </Link>
@@ -134,7 +135,7 @@ function Header() {
                         {currentUser ? (
                             <Image
                                 className={cx('user-avatar')}
-                                src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/7165804365322649605~c5_100x100.jpeg?x-expires=1669006800&x-signature=h%2FO%2BHD6%2B2gxuofY05I0ylNVROIc%3D"
+                                src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/7165804365322649605~c5_100x100.jpeg?x-expires=1669467600&x-signature=hVBVTCRJ2qXocDW4NzGbRFhtMJE%3D"
                                 alt="Nguyen Van A"
                             />
                         ) : (
