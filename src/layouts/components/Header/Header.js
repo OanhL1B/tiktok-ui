@@ -130,12 +130,11 @@ function Header() {
                             <Button primary>Log in</Button>
                         </>
                     )}
-
                     <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
                         {currentUser ? (
                             <Image
                                 className={cx('user-avatar')}
-                                src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/7165804365322649605~c5_100x100.jpeg?x-expires=1669467600&x-signature=hVBVTCRJ2qXocDW4NzGbRFhtMJE%3D"
+                                src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/7165804365322649605~c5_100x100.jpeg?x-expires=1669968000&x-signature=Gdq9p0pnvOEJ8LnPpLbK0KSlsPg%3D"
                                 alt="Nguyen Van A"
                             />
                         ) : (
