@@ -42,32 +42,6 @@ function Search() {
         fetchApi();
     }, [debouncedValue]);
 
-    // useEffect(() => {
-    //     if (!debouncedValue.trim()) {
-    //         // searchResult([]);
-    //         return;
-    //     }
-
-    //     setLoading(true);
-    //     //encodeURIComponent trường hợp người dùng nhập ? & k gây trùng với url quy ước, gây ra bug
-    //     httpRequest
-    //         .get('users/search', {
-    //             params: {
-    //                 q: debouncedValue,
-    //                 type: 'less',
-    //             },
-    //         })
-
-    //         .then((res) => {
-    //             setSearchResult(res.data);
-    //             setLoading(false);
-    //         })
-
-    //         .catch(() => {
-    //             setLoading(false);
-    //         });
-    // }, [debouncedValue]);
-
     const handleClear = () => {
         setSearchValue('');
         setSearchResult([]);
