@@ -1,0 +1,12 @@
+.wrapper {
+    display: flex;
+    padding: 20px 0;
+    position: relative;
+}
+
+.avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    cursor: pointer;
+}

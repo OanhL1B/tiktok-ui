@@ -2,4 +2,126 @@
     width: 356px;
     padding: 20px 0 26px 8px;
     margin-left: -18px;
+    //position: fixed;
+    // top: 0;
+    // bottom: 0;
+    // overflow-y: scroll;
+    &:hover {
+        transition: opacity 2s ease;
+    }
+
+    &:not(:hover)::-webkit-scrollbar-thumb {
+        background: transparent;
+    }
+
+    &::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 5px;
+        background: rgba(0, 0, 0, 0.05);
+    }
+}
+
+.title-discover {
+    font-size: 14px;
+    line-height: 20px;
+    padding: 0 8px;
+    color: rgba(22, 24, 35, 0.75);
+    margin-bottom: 8px;
+}
+.discover {
+    padding-bottom: 8px;
+
+    .discover-list {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        padding-left: 8px;
+    }
+
+    .hashtag {
+        display: flex;
+        box-sizing: border-box;
+        width: fit-content;
+        max-width: 100%;
+        height: 24px;
+        margin-bottom: 12px;
+        padding: 3px 10px;
+        border: 1px solid rgba(22, 24, 35, 0.2);
+        border-radius: 12px;
+        background: rgb(255, 255, 255);
+        margin-right: 8px;
+        color: rgba(22, 24, 35, 0.75);
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 18px;
+        overflow: hidden;
+
+        &:hover {
+            background: rgba(22, 24, 35, 0.03);
+            cursor: pointer;
+        }
+
+        svg {
+            margin-right: 6px;
+            flex-shrink: 0;
+        }
+
+        .text {
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+    }
+}
+
+.see-all {
+    padding: 8px;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #fe2c55;
+    cursor: pointer;
+}
+
+.footer {
+    position: relative;
+    padding-top: 16px;
+    padding-left: 8px;
+    font-size: 1.4rem;
+    box-sizing: border-box;
+    display: block;
+    .group_link1,
+    .group_link2,
+    .group_link3 {
+        margin-bottom: 8px;
+
+        flex-wrap: wrap;
+        width: 100%;
+        a {
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+    a,
+    span {
+        color: rgba(22, 24, 35, 0.5);
+        margin-right: 6px;
+        margin-top: 5px;
+        font-weight: 900;
+        display: inline-block;
+        line-height: 17px;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 8px;
+        right: 8px;
+        top: 0;
+        height: 1px;
+        background: rgba(22, 24, 35, 0.08);
+    }
 }

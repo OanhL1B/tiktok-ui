@@ -1,14 +1,15 @@
 import * as httpRequest from '~/utils/httpRequest';
-// tất cả phần gọi api sẽ nằm ở đây
-export const getSuggested = async ({ page, perPage }) => {
+
+export const getSuggested = async (page = '1', per_page) => {
     try {
-        const res = await httpRequest.get('users/suggested', {
+        const response = await httpRequest.get('users/suggested', {
             params: {
                 page,
-                per_page: perPage,
+                per_page,
             },
         });
-        return res.data;
+
+        return response.data;
     } catch (error) {
         console.log(error);
     }
